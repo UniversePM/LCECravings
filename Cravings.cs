@@ -61,7 +61,7 @@ public class Cravings : IMod
             return UseItemResult.CancelVanilla;
         }
     }
-    # [TODO] add ConsumableContained : Consumable {} (allows an item to be given upon eating i.e. buckets or bowls) - uni
+    // [TODO] add ConsumableContained : Consumable {} (allows an item to be given upon eating i.e. buckets or bowls) - uni
     public static RegisteredItem? cookedEgg;
     public static RegisteredItem? cookedRice;
     public static RegisteredItem? beefJerky;
@@ -78,7 +78,7 @@ public class Cravings : IMod
                 .InCreativeTab(CreativeTab.Food)
                 .Name(Text.Translatable("item.cravings.cooked_egg")));
         
-        cookedRice = Registry.Item.Register("cravings:cooked_rice", new Consumable { hunger = 3, satMultiplier = 0.9f }, # change to ConsumableContained for bowl - uni
+        cookedRice = Registry.Item.Register("cravings:cooked_rice", new Consumable { hunger = 3, satMultiplier = 0.9f }, // change to ConsumableContained for bowl - uni
             new ItemProperties()
                 .MaxStackSize(16)
                 .Icon("cravings:item/cooked_rice")
