@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Cravings</RootNamespace>
+    <AssemblyName>Cravings</AssemblyName>
+    <Description>A foods and drinks mod for LCE!</Description>
+    <Version>0.1.0</Version>
+    <OutputPath>..\build\mods\Cravings</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Private=false: do not copy WeaveLoader.API into ExampleMod. API lives in mods/WeaveLoader.API/ -->
+    <ProjectReference Include="..\WeaveLoader.API\WeaveLoader.API.csproj">
+      <Private>false</Private>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
