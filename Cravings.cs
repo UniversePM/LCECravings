@@ -61,6 +61,7 @@ public class Cravings : IMod
             return UseItemResult.CancelVanilla;
         }
     }
+    # [TODO] add ConsumableContained : Consumable {} (allows an item to be given upon eating i.e. buckets or bowls) - uni
     public static RegisteredItem? cookedEgg;
     public static RegisteredItem? cookedRice;
     public static RegisteredItem? beefJerky;
@@ -77,23 +78,23 @@ public class Cravings : IMod
                 .InCreativeTab(CreativeTab.Food)
                 .Name(Text.Translatable("item.cravings.cooked_egg")));
         
-        cookedRice = Registry.Item.Register("cravings:cooked_rice", new Consumable { hunger = 3, satMultiplier = 0.9f },
+        cookedRice = Registry.Item.Register("cravings:cooked_rice", new Consumable { hunger = 3, satMultiplier = 0.9f }, # change to ConsumableContained for bowl - uni
             new ItemProperties()
                 .MaxStackSize(16)
                 .Icon("cravings:item/cooked_rice")
                 .InCreativeTab(CreativeTab.Food)
                 .Name(Text.Translatable("item.cravings.cooked_rice")));
         
-        beefJerky = Registry.Item.Register("cravings:beef_jerky", new Consumable { hunger = 3, satMultiplier = 1.1f },
+        beefJerky = Registry.Item.Register("cravings:beef_jerky", new Consumable { hunger = 3, satMultiplier = 1.2f },
             new ItemProperties()
-                .MaxStackSize(64)
+                .MaxStackSize(16)
                 .Icon("cravings:item/beef_jerky")
                 .InCreativeTab(CreativeTab.Food)
                 .Name(Text.Translatable("item.cravings.beef_jerky")));
 
-	porkJerky = Registry.Item.Register("cravings:pork_jerky", new Consumable { hunger = 3, satMultiplier = 1.1f },
+	porkJerky = Registry.Item.Register("cravings:pork_jerky", new Consumable { hunger = 3, satMultiplier = 1.2f },
 	    new ItemProperties()
-	        .MaxStackSize(64)
+	        .MaxStackSize(16)
 		.Icon("cravings:item/pork_jerky")
 		.InCreativeTab(CreativeTab.Food)
 		.Name(Text.Translatable("item.cravings.pork_jerky")));
