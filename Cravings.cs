@@ -64,6 +64,8 @@ public class Cravings : IMod
     public static RegisteredItem? cookedEgg;
     public static RegisteredItem? cookedRice;
     public static RegisteredItem? beefJerky;
+    public static RegisteredItem? porkJerky;
+    public static RegisteredItem? iceCream;
 
     public void OnInitialize()
     {
@@ -82,12 +84,26 @@ public class Cravings : IMod
                 .InCreativeTab(CreativeTab.Food)
                 .Name(Text.Translatable("item.cravings.cooked_rice")));
         
-        beefJerky = Registry.Item.Register("cravings:beef_jerky", new Consumable { hunger = 3, satMultiplier = 1.7f },
+        beefJerky = Registry.Item.Register("cravings:beef_jerky", new Consumable { hunger = 3, satMultiplier = 1.1f },
             new ItemProperties()
                 .MaxStackSize(64)
                 .Icon("cravings:item/beef_jerky")
                 .InCreativeTab(CreativeTab.Food)
                 .Name(Text.Translatable("item.cravings.beef_jerky")));
+
+	porkJerky = Registry.Item.Register("cravings:pork_jerky", new Consumable { hunger = 3, satMultiplier = 1.1f },
+	    new ItemProperties()
+	        .MaxStackSize(64)
+		.Icon("cravings:item/pork_jerky")
+		.InCreativeTab(CreativeTab.Food)
+		.Name(Text.Translatable("item.cravings.pork_jerky")));
+
+	iceCream = Registry.Item.Register("cravings:ice_cream", new Consumable { hunger = 3, satMultiplier = 1.5f },
+	    new ItemProperties()
+	        .MaxStackSize(8)
+		.Icon("cravings:item/ice_cream")
+		.InCreativeTab(CreativeTab.Food)
+		.Name(Text.Translatable("item.cravings.ice_cream")));
 
         Registry.Recipe.AddFurnace("minecraft:egg", "cravings:cooked_egg", 1.0f);
 
